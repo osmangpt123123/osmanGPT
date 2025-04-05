@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OsmanGPT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #response {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>OsmanGPT</h1>
+    <input type="text" id="question" placeholder="Sorunuzu yazın...">
+    <button onclick="askQuestion()">Sor</button>
+    <div id="response"></div>
+
+    <script>
+        function askQuestion() {
+            var question = document.getElementById('question').value;
+            // Quasar Alpha API entegrasyonu burada olacak
+            // Simülasyon için sabit bir yanıt döndürelim
+            var response = "Bu, Quasar Alpha API'den gelen bir yanıttır.";
+            document.getElementById('response').innerText = response;
+        }
+    </script>
+</body>
+</html>
