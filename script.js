@@ -2,13 +2,16 @@ const API_KEY = 'sk-or-v1-c1f675e6c6fc7cff51e00fd8ca326aa636f6056613df5c4dd7735a
 function askQuestion() {
     var question = document.getElementById('question').value;
     // Quasar Alpha API'ye istek göndermek için fetch kullanıyoruz
-    fetch('https://api.quasaralpha.com/v1/ai', {
+    fetch('https://openrouter.ai/api/v1/chat/completions, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${API_KEY}`
+            
         },
-        body: JSON.stringify({ prompt: question })
+        body: JSON.stringify({
+    model: "gpt-3.5-turbo",
+    messages: [{ role: "user", content: question }]
+})
     })
     .then(response => response.json())
     .then(data => {
